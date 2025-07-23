@@ -644,6 +644,88 @@ p {
     width: 100%; }
 
 /*===========================
+      6.PROJECTS css 
+===========================*/
+.projects-area {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  position: relative; }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .projects-area {
+      padding-top: 100px;
+      padding-bottom: 100px; } }
+  @media (max-width: 767px) {
+    .projects-area {
+      padding-top: 80px;
+      padding-bottom: 80px; } }
+
+.projects-content .services-icon i {
+  font-size: 64px;
+  color: #181865; }
+
+.projects-content .projects-content {
+  padding-left: 15px; }
+  @media (max-width: 767px) {
+    .projects-content .projects-content {
+      padding-left: 0;
+      padding-top: 15px; } }
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .projects-content .projects-content {
+      padding-left: 15px;
+      padding-top: 0; } }
+  .projects-content .projects-content .projects-content {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #121212; }
+  .projects-content .projects-content .text {
+    font-size: 14px;
+    line-height: 20px;
+    color: #121212;
+    margin-top: 8px; }
+
+.projects-image {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  top: 0;
+  right: 0; }
+  @media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .projects-image {
+      width: 34%; } }
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    .projects-image {
+      position: relative;
+      width: 720px;
+      margin: 0 auto; } }
+  @media (max-width: 767px) {
+    .projects-image {
+      position: relative;
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 16px;
+      margin: 0 auto; } }
+  @media only screen and (min-width: 576px) and (max-width: 767px) {
+    .projects-image {
+      position: relative;
+      width: 540px;
+      margin: 0 auto; } }
+  .projects-image .image {
+    max-width: 580px;
+    width: 100%; }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .projects-image .image {
+        margin: 0 auto;
+        padding-top: 50px; } }
+    @media (max-width: 767px) {
+      .projects-image .image {
+        margin: 0 auto;
+        padding-top: 50px; } }
+    .projects-image .image img {
+      width: 100%; }
+
+
+/*===========================
     5.CALL TO ACTION css 
 ===========================*/
 .call-to-action {
@@ -971,3 +1053,82 @@ p.form-message.error {
   .back-to-top:hover {
     background-color: #181865;
     color: #fff; }
+
+
+/* Code provided by ChatGPT */
+/* ——— Collaborators: final sizing & layout ——— */
+
+/* Section heading stays smaller than “The Team” */
+.collaborators-section .section-title .title{
+    font-size: 1.5rem;
+}
+
+/* Name & role: larger than before, still smaller than Team cards */
+.collaborators-section .pricing-header .title{   /* collaborator name */
+    font-size: 1.25rem;        /* ≈20 px */
+    font-weight: 600;
+    margin-bottom: .35rem;
+}
+.collaborators-section .pricing-header .year{    /* role / affiliation */
+    font-size: 1rem;           /* ≈16 px */
+    line-height: 1.35;
+}
+
+/* Grid:            1-column   2-columns   3-columns    4-columns          */
+.collaborators-grid{
+    display: grid;
+    gap: 1.5rem;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+/* Never more than 4 columns once we’re on laptops (≥ 992 px) */
+@media (min-width: 992px){
+    .collaborators-grid{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Card & portrait slightly bigger than in the first draft */
+.collaborators-grid .single-pricing{
+    width: 100%;          /* takes full width of its grid cell */
+    max-width: 100%;      /* let the grid decide the width (≈260 px) */
+}
+/* —— Collaborators portrait: fill more of the card —— */
+.collaborators-grid .image img{
+    width: 75%;        /* let the picture scale with the card (≈195 px in a 260 px cell) */
+    max-width: 200px;  /* safety stop on very wide monitors */
+    height: auto;      /* keep aspect ratio */
+    margin: 0.5rem auto 0; /* optional breathing room */
+}
+
+
+/* =========================================================
+   TEAM & COLLABORATOR NAME COLOURS
+   ========================================================= */
+
+/* 1 ▸ Normal state – dark-blue (#181865) */
+.pricing-area .pricing-header .title,               /* “The Team” cards */
+.collaborators-section .pricing-header .title{      /* Collaborator cards */
+    color: #181865;
+}
+
+/* 2 ▸ Links inherit the colour & lose the underline (collaborator names are links) */
+.pricing-area .pricing-header .title a,
+.collaborators-section .pricing-header .title a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 3 ▸ Hover / focus – footer-bar yellow (#fbac06)                   */
+/*     Works both when the whole <h3> is hovered (Team) and when     */
+/*     the <a> inside it is hovered (Collaborators).                 */
+.pricing-area .pricing-header .title:hover,
+.collaborators-section .pricing-header .title:hover,
+.pricing-area .pricing-header .title a:hover,
+.collaborators-section .pricing-header .title a:hover,
+.pricing-area .pricing-header .title a:focus,
+.collaborators-section .pricing-header .title a:focus{
+    color: #fbac06;
+    text-decoration: underline;   /* optional – remove if you prefer */
+}
